@@ -47,7 +47,7 @@ const storage = new CloudinaryStorage({
     },
 });
 
-const upload = multer({ storage: storage, limits: { fileSize: 100000000 } }); // 100MB limit
+const upload = multer({ storage: storage, limits: { fileSize: 200000000 } }); // 100MB limit
 
 // Serve Upload Page
 app.get("/", (req, res) => {
