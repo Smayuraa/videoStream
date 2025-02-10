@@ -7,15 +7,15 @@ const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 // Set EJS as the view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // Middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({limit: "100mb",extended: true }));
+app.use(express.json({ limit: "100mb" }));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
@@ -143,6 +143,19 @@ app.post("/delete/:id", async (req, res) => {
         res.status(500).send("Error deleting video.");
     }
 });
+
+app.post("/save-video", async (req, res) => {
+    try {
+        const { name, url } = req.body;
+        const newVideo = new Video({ name, url });
+        await newVideo.save();
+        res.status(201).json({ message: "Video saved successfully!" });
+    } catch (error) {
+        console.error("Error saving video:", error);
+        res.status(500).json({ message: "Error saving video" });
+    }
+});
+
 
 
 // Start Server
