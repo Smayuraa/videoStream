@@ -47,6 +47,17 @@ const storage = new CloudinaryStorage({
     },
 });
 
+
+  const config = {
+    runtime: "edge",
+    api: {
+      bodyParser: {
+        sizeLimit: "100mb", // Adjust according to your needs
+      },
+    },
+  };
+  
+  
 const upload = multer({ storage: storage, limits: { fileSize: 200000000 } }); // 100MB limit
 
 // Serve Upload Page
