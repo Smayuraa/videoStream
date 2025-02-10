@@ -6,26 +6,27 @@
     <title>Edit Video</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #fff;
-            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
             padding: 0;
         }
 
         h1 {
-            margin-top: 20px;
-            font-size: 2rem;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 2.5rem;
+            color: #4a90e2;
         }
 
         .container {
-            width: 60%;
-            margin: 30px auto;
-            padding: 20px;
-            background: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+            width: 50%;
+            margin: 50px auto;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         form {
@@ -36,48 +37,62 @@
 
         label {
             font-size: 1.2rem;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            color: #555;
         }
 
         input[type="text"], input[type="file"] {
-            margin: 10px 0;
-            padding: 10px;
-            background: #272727;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
+            margin: 12px 0;
+            padding: 12px;
+            background-color: #e0e0e0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            color: #333;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input[type="text"]:focus, input[type="file"]:focus {
+            border-color: #4a90e2;
+            outline: none;
         }
 
         button {
-            padding: 10px 20px;
-            background: #ff9800;
+            padding: 12px 25px;
+            background-color: #4a90e2;
             color: #fff;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: bold;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: background-color 0.3s;
+            width: 100%;
+            max-width: 400px;
         }
 
         button:hover {
-            background: #e68900;
+            background-color: #357ab7;
         }
 
         a {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #03a9f4;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: #8e44ad;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
-            transition: 0.3s;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            transition: background-color 0.3s;
         }
 
         a:hover {
-            background: #0288d1;
+            background: #7d3c96;
         }
     </style>
 </head>
